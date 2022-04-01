@@ -1,36 +1,71 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: hsl(217, 54%, 11%);
-  color: hsl(0, 0%, 100%);
+  min-height: 100vh;
   font-family: "Outfit";
+  font-family: 1.125rem;
+  background-color: hsl(217, 54%, 11%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Container */
-#container {
-  max-width: 300px;
-  margin: 0 auto;
-  margin-top: 16vh;
-  box-shadow: 0px 20px 10px hsl(217, 54%, 11%), 10px 20px 10px hsl(217, 54%, 11%), -10px 20px 10px hsl(217, 54%, 11%);
+h1 {
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.375rem;
+  cursor: pointer;
 }
 
-@media (max-width: 1028px) {
-  #container {
-    margin-top: 10vh;
-  }
+h1:hover {
+  color: hsl(178, 100%, 50%);
 }
 
-.card {
+h2 {
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+p {
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+  font-size: 1rem;
+}
+
+
+.container {
+  border-radius: 10px;
   background-color: hsl(216, 50%, 16%);
-  padding: 18px;
-  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0px 2px 16px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 
-/* Image */
-.card__img {
+
+/* Image Section */
+
+.image-container {
+  position: relative;
+}
+
+.card-img {
+  display: block;
   width: 100%;
-  border-radius: 8px;
-  height: 270px;
-  object-fit: cover;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .overlay {
@@ -39,22 +74,19 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100%;
   width: 100%;
   opacity: 0;
-  transition: 0.1s ease;
+  transition: 0.5s ease;
+  border-radius: 10px;
   background-color: hsl(178, 100%, 50%);
-  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.img__container {
-  position: relative;
-}
 
-.img__container:hover .overlay{
-  opacity: 0.5;
-}
-
-.icon__view {
+.view-icon {
   color: hsl(0, 0%, 100%);
   position: absolute;
   top: 50%;
@@ -65,38 +97,43 @@ body {
   text-align: center;
 }
 
-.img__container:hover .text {
+.image-container:hover .view-icon {
   opacity: 1;
 }
 
-
-
-/* Card details */
-.name {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 16px;
+.image-container:hover .overlay {
+  opacity: 0.6;
 }
 
-.name:hover {
-  color: hsl(178, 100%, 50%);
+
+
+/* Card body Section */
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.card__description {
-  font-weight: 300;
-  color: hsl(215, 51%, 70%);
+.card-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.price__tag, .price__tag svg {
-  color: hsl(178, 100%, 50%);
-  font-size: 13px;
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.price-tag {
   font-weight: 400;
-}
-
-.time__description {
-  color: hsl(215, 51%, 70%);
-  font-size: 13px;
-  padding-left: 105px;
+  color: hsl(178, 100%, 50%);
 }
 
 hr {
@@ -105,34 +142,52 @@ hr {
   border-top: 1px solid  hsl(215, 32%, 27%);
 }
 
-.creator__image {
-  width: 10%;
-  border: 1px solid hsl(0, 0%, 100%);
-  border-radius: 100%;
-  margin: 10px 10px 0 0;
+/* Creator Section */
+
+.creator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 14px 7px 0px;
 }
 
-.card__attribution {
+.creator-image {
+  width: 30px;
+  height: 30px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+
+.card-attribution {
   font-weight: 300;
   color: hsl(215, 51%, 70%);
-  font-size: 13px;
+  font-size: 1rem;
 }
 
-.creator__name {
+.creator-name {
   color: hsl(0, 0%, 100%);
 }
 
-.creator__name:hover{
+.creator-name:hover{
   color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
 
 /* footer */
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+footer {
+  position: fixed;
+  bottom: 0;
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1rem;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+footer a {
+  color: hsl(178, 100%, 50%);
 }
