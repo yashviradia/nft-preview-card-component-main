@@ -60,6 +60,11 @@ p {
   position: relative;
 }
 
+.card-img__anchor {
+  display: block;
+  position: relative;
+}
+
 .card-img {
   display: block;
   width: 100%;
@@ -83,18 +88,23 @@ p {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 
 .view-icon {
   color: hsl(0, 0%, 100%);
   position: absolute;
+  opacity: 0;
   top: 50%;
   left: 50%;
+  transition: 0.5s ease;
+  cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 2;
 }
 
 .image-container:hover .view-icon {
@@ -102,7 +112,7 @@ p {
 }
 
 .image-container:hover .overlay {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 
