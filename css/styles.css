@@ -115,8 +115,6 @@ p {
   opacity: 0.5;
 }
 
-
-
 /* Card body Section */
 
 .card-description {
@@ -188,11 +186,11 @@ hr {
 
 footer {
   position: fixed;
-  bottom: 0;
   color: hsl(0, 0%, 100%);
   display: flex;
   align-items: center;
   width: 100%;
+  bottom: 0;
   justify-content: center;
   gap: 15px;
   font-size: 1rem;
